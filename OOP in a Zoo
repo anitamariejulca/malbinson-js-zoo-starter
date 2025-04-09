@@ -7,3 +7,18 @@ function run() {
 }
 
 run();
+
+var favoriteFood = "bacon"
+
+function eat(name, food) {
+    console.log(name + " eats " + food);
+    if (food == favoriteFood) {
+        console.log ("YUM!!! " + name + " wants more " + food);
+} else { 
+    sleep(name);
+}
+}
+
+eat("Tigger", "meat");
+eat("Tigger", "bacon");
+

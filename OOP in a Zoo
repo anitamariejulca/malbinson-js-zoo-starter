@@ -41,7 +41,7 @@ eat("Tigger", "meat");
 eat("Tigger", "bacon");
 
 
-class Tiger {
+class Animal {
    constructor(name, favoriteFood) {
        this.name = name;
        this.favoriteFood = favoriteFood;
@@ -64,6 +64,11 @@ class Tiger {
    }
 }
 
+class Tiger extends Animal {
+   constructor(name) {
+      super(name, "meat");
+   }
+}
 
 class Bear {
    constructor(name) {
@@ -76,33 +81,90 @@ class Bear {
        console.log(this.name + "hibernates for 4 months");
   
    }
+}
 
+class Unicorn extends Animal {
+   constructor(name) {
+      super(name, "marshmallows");
+}
+   sleep() {
+      console.log(this.name + "sleeps in a cloud");
+      }
+}
+
+class Giraffe extends Animal {
+   constructor(name) {
+      super(name, "leaves")
+}
+
+eat(food) {
+   if (food == "leaves") {
+      super.eat(food);
+      } else {
+      console.log("YUCK!!! " + this.name + " will not eat " +food);
+      }
+   }
+}
+
+class Bee extends Animal {
+   constructor(name) {
+      super(name, "pollen");
+}
 
    eat(food) {
-       console.log(this.name + " eats " + food);
        if (food == this.favoriteFood) {
-           console.log("YUM!!! " + this.name + " watns more " + food);
+         console.log(this.name + " eats " + food);
+         console.log("YUM!!! " + this.name + " wants more " + food);
+         this.sleep();
        } else {
-           this.sleep();
+           console.log("YUCK!!! " + this.name + " will not eat " + food);
        }
-       }
+       
    }
+sleep() {
+   console.log(this.name + " never sleeps");
+   }
+}
 
+class Zookeeper {
+   constructor(name) {
+      this.name = name;
+}
 
-/*i coaxed up compliments until my throat burned with my own sweet-talk
-and i contorted my jaw into a smile until my teeth burned with numbness 
-i vomited up giggles to each jestering innuedos, playing me like nintendo
-i vomited up streams of laughter to their 
-and as i stood in the center of the circus ring with nothing more i could hurl
-i heard the crowd stand and apluad "good girl"
-*/
+feedAnimals(animals, food) {
+   console.log(this.name + " is feeding " + food + " to " + animals.length + " animals");
+   for (let animal of animals) {
+      animal.eat(food);
+      }
+   }
+}
 
-*/ favorite poetry books
-   eighteen years by madisen kuhn
-   reconstruction by edith friedman
-   when your sky runs into mine by Rooja Mohassessy
-   wild geese by mary oliver
-   the bell jar by sylvia plath
-   violent bent backwards over the grass by lana del rey
-   no matter the wreckage by sarah kay
+function main() {
+   var tigger = new Tiger("tigger");
+   tigger.eat("meat");
+
+   var pooh = new Bear("Pooh")
+   pooh.eat("fish");
+   pooh.eat("meat);
+
+   var rarity = new Unicorn("Rarity");
+   rarity.eat("marshmallows");
+   rarity.sleep();
+
+   var gemma = new Giraffe("Femma");
+   gemma.eat("meat");
+   gemma.eat("leaves");
+
+   var stinger = new Bee("Stinger");
+   stinger.eat("ice cream");
+   stinger.eat("pollen");
+
+   var zoebot = new Zookeeper(Zoebot");
+   var animals = (tigger, pooh, rarity, gemma, stinger);
+   var favorideFood = 'mangoes";
+
+   zoebot.feedAnimals(animals, favorideFood);
+
+}
+
    
